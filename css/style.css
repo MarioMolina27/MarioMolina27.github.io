@@ -9840,6 +9840,12 @@ h6,
   color: #ffffff;
 }
 
+
+.btn-no-animation:before,
+.btn-no-animation:after {
+  display: none; /* Eliminar la animación */
+}
+
 .btn-play {
   position: relative;
   display: block;
@@ -9893,6 +9899,53 @@ h6,
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
 }
+
+.btn-video {
+  position: relative;
+  display: block;
+  box-sizing: content-box;
+  width: 16px;
+  height: 26px;
+  border-radius: 100%;
+  border: none;
+  outline: none !important;
+  padding: 18px 20px 20px 28px;
+  margin-left: 5px;
+}
+
+.btn-video span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  left: -1px;
+  border-left: 16px solid #ffa400;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+
+.btn-github {
+  padding: 18px 20px 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  width: 16px;
+  height: 26px;
+  border-radius: 100%;
+  border: none;
+  outline: none !important;
+  background-color: #ffffff;
+  margin-right: 5px;
+}
+
+.btn-github i {
+  font-size: 25px;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
 
 @keyframes pulse-border {
   0% {
@@ -10028,4 +10081,8 @@ h6,
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.additional-button {
+  background-color: white;
 }
