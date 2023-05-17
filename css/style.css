@@ -9938,12 +9938,20 @@ h6,
   outline: none !important;
   background-color: #ffffff;
   margin-right: 5px;
+  color: black; 
 }
 
 .btn-github i {
   font-size: 25px;
   margin-right: 8px;
   margin-top: 2px;
+}
+.btn-github:hover {
+  text-decoration: none; 
+  outline: none; 
+}
+.btn-github:hover .fab.fa-github {
+  color: black; /* Cambiar el color del logotipo de GitHub a negro en hover */
 }
 
 
