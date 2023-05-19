@@ -113,6 +113,22 @@
         loop: true,
         items: 1
     });
+
+    // Button to hide and show the portfolio overlay
+    $('.btn-video').click(function() {
+        var portfolioOverlay = $(this).closest('.portfolio-overlay');
+        if (portfolioOverlay.hasClass('active')) {
+            portfolioOverlay.removeClass('active');
+        } else {
+            $('.portfolio-overlay').removeClass('active');
+            portfolioOverlay.addClass('active');
+        }
+    });
+
+    // Hide all overlays when the video modal is closed
+    $('#videoModal').on('hidden.bs.modal', function() {
+        $('.portfolio-overlay').removeClass('active');
+    });
     
 })(jQuery);
 

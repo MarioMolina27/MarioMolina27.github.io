@@ -10054,6 +10054,10 @@ h6,
   filter: blur(3px); 
 }
 
+.portfolio-overlay.active {
+  bottom: 0;
+}
+
 .testimonial-carousel .owl-dots {
   margin-top: 25px;
   text-align: center;
