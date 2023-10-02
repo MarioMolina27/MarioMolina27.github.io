@@ -132,3 +132,14 @@
     
 })(jQuery);
 
+
+const btnGoWeb = document.querySelectorAll('.btn-go-web');
+btnGoWeb.forEach(function(button) {
+    button.addEventListener("click", function() {
+        // Obtiene la dirección del archivo HTML del atributo "value" del botón
+        let url = button.value;
+       
+        window.open(url, '_blank');
+    });
+});
+
