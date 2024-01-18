@@ -47,15 +47,21 @@
         $('.btn-video, .btn-play').click(function() {
             $videoSrc = $(this).data("src");
         });
-        console.log($videoSrc);
 
         $('#videoModal').on('shown.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
         })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
+    
+    
+       
+        $('#videoModal').on('hidden.bs.modal', function (e) {
+            let  allPortfolioOverlays = document.querySelectorAll('.portfolio-overlay');
+            setTimeout(function() {
+                allPortfolioOverlays.forEach(function(overlay) {
+                    overlay.classList.remove('active');
+                });
+            }, 500);
+        });
     });
 
 
@@ -76,6 +82,7 @@
         });
     }, {offset: '80%'});
 
+   
 
     // Portfolio isotope and filter
     var portfolioIsotope = $('.portfolio-container').isotope({
@@ -104,31 +111,7 @@
         return false;
     });
 
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        dots: true,
-        loop: true,
-        items: 1
-    });
-
-    // Button to hide and show the portfolio overlay
-    $('.btn-video').click(function() {
-        var portfolioOverlay = $(this).closest('.portfolio-overlay');
-        if (portfolioOverlay.hasClass('active')) {
-            portfolioOverlay.removeClass('active');
-        } else {
-            $('.portfolio-overlay').removeClass('active');
-            portfolioOverlay.addClass('active');
-        }
-    });
-
-    // Hide all overlays when the video modal is closed
-    $('#videoModal').on('hidden.bs.modal', function() {
-        $('.portfolio-overlay').removeClass('active');
-    });
+   
     
 })(jQuery);
 
@@ -142,4 +125,6 @@ btnGoWeb.forEach(function(button) {
         window.open(url, '_blank');
     });
 });
+
+
 
