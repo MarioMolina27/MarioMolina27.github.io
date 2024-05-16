@@ -1,0 +1,133 @@
+.project-main-image{
+    width: 40%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(212,200,212,1);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(212,200,212,1);
+    box-shadow: 5px 6px 5px 0px rgba(212,200,212,1);
+}
+
+.project-main-title{
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+}
+
+.project-main-divider{
+    width: 30%;
+    height: 2px;
+    background-color: var(--text-color);
+    margin: 2rem 0;
+}
+
+.project-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.links-project-container{
+    width: 50%;
+    justify-content: space-around;
+}
+
+.project-link-github{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+
+.project-link-project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.img-project-title{
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    text-align: start;
+}
+
+.text-aligned{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.info-container{
+  font-size: larger;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+  }
+  
+  .info-item {
+    padding: 5px 0;
+    display: flex;
+    align-items: start;
+    font-family: 'Fira Sans', sans-serif;
+    color: var(--text-color);
+    text-align: start;
+  }
+  
+  .project-description {
+    margin-top: 20px;
+    text-align: start;
+
+  }
+
+  .project-description{
+    font-family: 'Fira Sans', sans-serif;
+    color: var(--text-color)
+
+  }
+
+  .info-item-title{
+    color: var(--secondary-color)
+  }
+
+  .video-project{
+    width: 100%;
+    border-radius: 10px;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 768px) {
+   .links-project-container{
+        width: 100%;
+   }
+   .project-main-image{
+       width: 90%;
+   }
+}

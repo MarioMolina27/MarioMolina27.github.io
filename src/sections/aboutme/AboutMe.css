@@ -1,0 +1,118 @@
+.aboutme{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    margin-top: 150px;
+}
+
+
+.text-services{
+    text-align: start;
+    font-size: 1.7rem;
+    color: var(--secondary-color);
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+}
+
+.img-face{
+    height: 50vh;
+    object-fit: cover;
+    object-position: center;
+    align-self: center;
+    mask-image: linear-gradient(
+        black 80%,
+        transparent
+    );
+}
+
+.img-mountain-about{
+    height: 40vh;
+    width: 36vw;
+    object-fit: cover;
+    object-position: center;
+    align-self: center;
+    border-radius: 20px;
+    align-self: flex-end;
+}
+
+.contact-container{
+    margin-top: 20px;
+}
+
+.contact-link{
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    background-color: var(--main-color);
+    margin: 5px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 3.5px solid var(--secondary-color);
+    transition: background-color 0.3s;
+}
+
+.contact-link>svg{
+    width: 40px ;
+    height: 40px;
+    fill: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.contact-link:hover{
+    background-color: var(--secondary-color);
+}
+
+.contact-link:hover > svg{
+    fill: var(--main-color)
+}
+
+.my-name{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: start;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.text-description-myself{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-family: 'Fira Sans', sans-serif;
+    text-align: start;
+}
+
+.animate__animated{
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+  
+    .text-description-myself{
+        font-size: 1.3rem;  
+    }
+
+    .text-services{
+        font-size: 1.5rem;
+    }
+}
+
+
+
+

@@ -1,0 +1,21 @@
+:root{
+    --main-color: #F9FBFD;
+    --secondary-color: #2F2F30;
+    --accent-color: #7936FF;
+    --text-color: #808089;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/src/assets/fonts/Minecraft.ttf');
+}
+

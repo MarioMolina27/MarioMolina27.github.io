@@ -1,0 +1,27 @@
+.explanatory-line{
+    position: relative;
+    font-weight: 900;
+    font-size: 6vw;
+    white-space: nowrap;
+    color: var(--accent-color);
+}
+
+.explanatory-text{
+    position: relative;
+    font-weight: 900;
+}
+
+.line-mask{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 100;
+    backdrop-filter: grayscale(1);
+}
+
+.explanatory-text-container{
+    padding-top: 50px;
+}

@@ -1,0 +1,84 @@
+#eyesanimation{
+    margin-top: 150px;
+}
+
+.eyes-content>h3{
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.eyes-main-title{
+    font-size: 4rem;
+    color: var(--secondary-color);
+}
+
+.eyes-secondary-title{
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-top: 20px !important;
+}
+
+.eyes-animation-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.eyes-animation{
+    width: 100%;
+    height: 50vh;
+    max-width: 600px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.eye{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pupil{
+    width: 50%;
+    height: 40%;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media (max-width: 768px) {
+   .eye{
+        height: 60%;
+   }
+
+   .eyes-animation-container{
+       margin-right: 0;
+       justify-content: center;
+   }
+
+   .eyes-main-title{
+       font-size: 3rem;
+   }
+
+   .eyes-secondary-title{
+       font-size: 1.7rem;
+   }
+}
+  

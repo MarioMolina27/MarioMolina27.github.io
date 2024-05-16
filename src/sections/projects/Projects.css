@@ -1,0 +1,20 @@
+.projects-content{
+    margin-top: 150px;
+}
+
+.go-project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects a:not(:first-child):not(:last-child) {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .go-project-container {
+        display: none;
+    }
+ }
