@@ -12,7 +12,7 @@ export default function MainContent() {
     return(
         <>
             <Home />
-            <div className='info-sections'>
+            <div className='info-sections' id="info-section">
                 <TextAnimation />
                 <AboutMe />
                 <CharacterVideo />

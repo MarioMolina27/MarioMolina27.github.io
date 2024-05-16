@@ -70,10 +70,50 @@ nav::after {
         z-index: 1000;
     }
 
+
+    nav.nav-close-mobile-not-home{
+        mix-blend-mode: normal;
+        background-color: var(--main-color);
+    }
+
+    nav.nav-close-mobile-not-home::after{
+        height: 1px;
+        width: 90%;
+        background-color: var(--secondary-color);
+        top: 100%;
+        right: 5%;
+    }
+
+    .navbar-open{
+        transition: background-color 1.5; 
+    }
+
     nav::after {
        height: 0;
        width: 0;
     }
+
+    .nav-close-mobile-not-home .burger-menu span{
+        background-color: var(--secondary-color);
+    }
+
+    .navbar-open{
+        background-color: var(--secondary-color);
+    }
+
+    .nav-close-mobile-not-home .navbar-open .burger-menu span{
+        background-color: var(--main-color);
+    }
+    
+    .nav-close-mobile-not-home .navbar-open::after {
+        background-color: var(--main-color);
+    }
+
+
+    .navbar-open {
+        background-color: transparent;
+    }
+
 }
 
 

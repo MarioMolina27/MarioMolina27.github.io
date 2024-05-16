@@ -22,14 +22,15 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
     }, [isOpen]);
 
     const handleClick = (id) => {
+        const porfolioContent = document.getElementById('porfolio-content');
         setIsOpen(false);
         setTimeout(() => {
             if (location.pathname === '/') {
-                document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+                porfolioContent.getElementById(id).scrollIntoView({ behavior: 'smooth' });
             } else {
                 navigate(`/`);
                 setTimeout(() => {
-                    document.getElementById(id).scrollIntoView({ behavior: 'instant'});
+                    porfolioContent.getElementById(id).scrollIntoView({ behavior: 'instant'});
                 }, 500);
             }
         }, 500);
