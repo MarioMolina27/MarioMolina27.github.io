@@ -12,9 +12,11 @@ export default function Navbar({ isOpen, setIsOpen }) {
         const porfolio = document.querySelector('.porfolio-content');
         const infoSection = document.getElementById('info-section');
         const nav = document.querySelector('nav');
+        const logo = document.querySelector('.logo');
         if(isOpen) {
             porfolio.style.overflow = 'hidden';
             nav.classList.remove('nav-close-mobile-not-home');
+            logo.style.display = 'none';
 
         } else {
             porfolio.style.overflow = 'auto';
@@ -22,10 +24,13 @@ export default function Navbar({ isOpen, setIsOpen }) {
                 const infoRect = infoSection.getBoundingClientRect();
                 if (infoRect.top > 0) {
                     nav.classList.remove('nav-close-mobile-not-home');
+                    logo.style.display = 'none';
                 } else {
                     setTimeout(() => {
                         // 1 SEGUNDO QUE TARDA LA ANIMACIÓN DE CIERRE DE LA NAV
                         nav.classList.add('nav-close-mobile-not-home');
+                        logo.style.display = 'block';
+
                     }, 800);
                 }
             }
@@ -52,6 +57,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
     const handleScroll = () => {
         const nav = document.querySelector('nav');
         const infoSection = document.getElementById('info-section');
+        const logo = document.querySelector('.logo');
 
         if (!infoSection) return;
 
@@ -59,15 +65,17 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
         if (infoRect.top > 50) {
             nav.classList.remove('nav-close-mobile-not-home');
+            logo.style.display = 'none';
         } else {
             nav.classList.add('nav-close-mobile-not-home');
+            logo.style.display = 'block';
         }
 
     };
 
 
     return(
-        <>
+        <>  <img src="logo.png" alt="logo" className="logo" />
             <nav className={`navbar-${isOpen ? 'open' : 'close'}`}>
                 <div className={`burger-menu ${isOpen ? 'open' : 'close'}`} onClick={toggleMenu}>                
                     <span></span>

@@ -26,6 +26,13 @@ nav::after {
 
 }
 
+.logo{
+    position: absolute;
+    height: 40px;
+    top: 30px;
+    left: 30px;
+}
+
 .burger-menu{
     cursor: pointer;
     overflow: hidden;
@@ -112,6 +119,14 @@ nav::after {
 
     .navbar-open {
         background-color: transparent;
+    }
+
+    .logo{
+        position: absolute;
+        height: 40px;
+        top: 15px;
+        left: 20px;
+        z-index: 1001;
     }
 
 }
