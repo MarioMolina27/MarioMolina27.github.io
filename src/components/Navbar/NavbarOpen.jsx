@@ -22,19 +22,30 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
     }, [isOpen]);
 
     const handleClick = (id) => {
-        const porfolioContent = document.getElementById('porfolio-content');
         setIsOpen(false);
         setTimeout(() => {
             if (location.pathname === '/') {
-                porfolioContent.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+                scrollToSection(id);
             } else {
                 navigate(`/`);
                 setTimeout(() => {
-                    porfolioContent.getElementById(id).scrollIntoView({ behavior: 'instant'});
+                    scrollToSection(id,'instant');
                 }, 500);
             }
         }, 500);
     };
+
+    function scrollToSection(id, behavior = 'smooth') {
+        const porfolio = document.querySelector('.porfolio-content');
+        const element = document.getElementById(id);
+    
+        if (porfolio && element) {
+            porfolio.scrollTo({
+                top: element.offsetTop - porfolio.offsetTop,
+                behavior: behavior
+            });
+        }
+    }
 
     return (
         <div className={`nav-open ${isOpen === null ? 'notShown' : (isOpen ? 'slideInFromLeft' : 'slideOutToLeft')} d-flex justify-content-center`}>

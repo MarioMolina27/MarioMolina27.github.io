@@ -52,12 +52,12 @@ export default function Navbar({ isOpen, setIsOpen }) {
     const handleScroll = () => {
         const nav = document.querySelector('nav');
         const infoSection = document.getElementById('info-section');
-        
+
         if (!infoSection) return;
 
         const infoRect = infoSection.getBoundingClientRect();
 
-        if (infoRect.top > 0) {
+        if (infoRect.top > 50) {
             nav.classList.remove('nav-close-mobile-not-home');
         } else {
             nav.classList.add('nav-close-mobile-not-home');
