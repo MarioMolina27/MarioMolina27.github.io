@@ -38,20 +38,8 @@ export default function Navbar({ isOpen, setIsOpen }) {
         const infoSection = document.getElementById('info-section');
         const porfolio = document.querySelector('.porfolio-content');
 
-        const handleScroll = () => {
-            
-            if (!infoSection) return;
-
-            const infoRect = infoSection.getBoundingClientRect();
-
-            if (infoRect.top > 0) {
-                nav.classList.remove('nav-close-mobile-not-home');
-            } else {
-                nav.classList.add('nav-close-mobile-not-home');
-            }
-
-        };
-
+        handleScroll(infoSection,nav);
+       
         porfolio.addEventListener('scroll', handleScroll);
 
         handleScroll();
@@ -60,6 +48,22 @@ export default function Navbar({ isOpen, setIsOpen }) {
             porfolio.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const handleScroll = () => {
+        const nav = document.querySelector('nav');
+        const infoSection = document.getElementById('info-section');
+        
+        if (!infoSection) return;
+
+        const infoRect = infoSection.getBoundingClientRect();
+
+        if (infoRect.top > 0) {
+            nav.classList.remove('nav-close-mobile-not-home');
+        } else {
+            nav.classList.add('nav-close-mobile-not-home');
+        }
+
+    };
 
 
     return(
