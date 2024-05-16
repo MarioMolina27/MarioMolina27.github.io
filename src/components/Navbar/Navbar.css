@@ -60,6 +60,9 @@ nav::after {
 .over-home-container span{
     background-color: var(--secondary-color);
 }
+.logo{
+    display: none;
+}
 
 
 @media (max-width: 768px) {
