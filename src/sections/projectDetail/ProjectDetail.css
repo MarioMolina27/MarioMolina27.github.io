@@ -129,5 +129,6 @@
    }
    .project-main-image{
        width: 90%;
+       margin-top: 80px !important;
    }
 }
