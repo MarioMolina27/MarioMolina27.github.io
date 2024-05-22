@@ -1,0 +1,92 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  background-color: var(--main-color);
+  top: 0;
+  flex-direction: column;
+}
+
+.loader {
+  width: 65px;
+  aspect-ratio: 1;
+  position: relative;
+  margin-bottom: 50px;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset var(--accent-color);
+  animation: l5 5s infinite;
+}
+.loader:after {
+  animation-delay: -2.5s;
+  border-radius: 0;
+}
+@keyframes l5 {
+  0% {
+    inset: 0 35px 35px 0;
+  }
+  12.5% {
+    inset: 0 35px 0 0;
+  }
+  25% {
+    inset: 35px 35px 0 0;
+  }
+  37.5% {
+    inset: 35px 0 0 0;
+  }
+  50% {
+    inset: 35px 0 0 35px;
+  }
+  62.5% {
+    inset: 0 0 0 35px;
+  }
+  75% {
+    inset: 0 0 35px 35px;
+  }
+  87.5% {
+    inset: 0 0 35px 0;
+  }
+  100% {
+    inset: 0 35px 35px 0;
+  }
+}
+
+.loading {
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  span {
+    display: inline-block;
+    margin: 0 -0.01em;
+    color: var(--accent-color);
+  }
+}
+
+.loading04 {
+  span {
+    animation: loading04 1.5s infinite;
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i + 1}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
+@keyframes loading04 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}

@@ -18,7 +18,7 @@ export default function ProjectDetail() {
       category: 'Web',
       techologies: ['Laravel', 'Vue', 'PrimeVue', 'Mapbox'],
       description: 'Lorem ipsum dolor sit amet, consecteturadipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua.Ut enim ad minim veniam,quis nostrudexercitation ullamco laboris nisi ut aliquipex ea commodo consequat. borum. veniadexercitation ullamco laboris nisi ut aliquipex ea commodo consequat. borum.',
-      img: './mountain.jpg',
+      img: './projects-img/streetfeed_background_img.jpg',
       imgs: ['./mountain.jpg', './mountain.jpg', './mountain.jpg', './mountain.jpg', './mountain.jpg', './mountain.jpg'],
       año: '2021',
       video: './a.mp4'

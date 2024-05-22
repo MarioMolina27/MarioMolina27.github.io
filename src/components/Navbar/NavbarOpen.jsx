@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import './NavbarOpen.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ColorSelector from '../colorSelector/colorSelector';
 
@@ -10,13 +10,15 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const items = [
+    const observerRef = useRef(null);
+
+    const items = useMemo(() => [
         { id: 'home', label: 'Home' },
         { id: 'aboutme', label: 'Sobre mi' },
         { id: 'projects', label: 'Proyectos' },
         { id: 'experience', label: 'Experiencia' },
         { id: 'skills', label: 'Habilidades' }
-    ];
+    ], []);
 
     useEffect(() => {
         if (isOpen) {
@@ -73,6 +75,54 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
             });
         }
     }
+
+    // Intersection Observer para cambiar el item seleccionado en el navbar
+    useEffect(() => {
+        const setupObserver = () => {
+            const porfolioContent = document.querySelector('.porfolio-content');
+            const sections = items.map(item => document.getElementById(item.id));
+            
+            if (sections[0] === null) {
+                setTimeout(setupObserver, 100);
+                return;
+            }
+
+            const options = {
+                root: porfolioContent,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const callback = (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const index = items.findIndex(item => item.id === entry.target.id);
+                        setSelectedItem(index);
+                    }
+                });
+            };
+
+            observerRef.current = new IntersectionObserver(callback, options);
+            sections.forEach(section => {
+                if (section) {
+                    observerRef.current.observe(section);
+                }
+            });
+        };
+
+        setupObserver();
+
+        return () => {
+            if (observerRef.current) {
+                const sections = items.map(item => document.getElementById(item.id));
+                sections.forEach(section => {
+                    if (section) {
+                        observerRef.current.unobserve(section);
+                    }
+                });
+            }
+        };
+    }, [items]);
 
   
 

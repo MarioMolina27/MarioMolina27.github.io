@@ -7,11 +7,17 @@ import EyesAnimation from './eyesanimation/EyesAnimation.jsx'
 import Experience from './experience/Experience.jsx'
 import Skills from './skills/Skills.jsx'
 import Footer from './footer/Footer.jsx'
+import Loader from '../components/loader/loader.jsx'
+
+import { useState } from 'react'
 
 export default function MainContent() {
+    const [loading, setLoading] = useState(true);
+
     return(
         <>
-            <Home />
+            <Home setLoading={setLoading} />
+            {loading && <Loader />}
             <div className='info-sections' id="info-section">
                 <TextAnimation />
                 <AboutMe />

@@ -7,8 +7,8 @@ export default function Footer() {
                 <div className='row footer-info normal-width-section d-flex justify-content-between mb-5'>
                     <div className='col-lg-6 col-12 footer-item footer-item-1'>
                         <p className='title-footer'>ME PUEDES ENCONTRAR EN</p>
-                        <a className='footer-text' href="">Github</a>
-                        <a className='footer-text' href="">Linkedin</a>
+                        <a className='footer-text' href="https://github.com/MarioMolina27">Github</a>
+                        <a className='footer-text' href="https://www.linkedin.com/in/mario-molina-ballesteros-a45a14277">Linkedin</a>
                     </div>
 
                     <div className='col-lg-6 col-12 footer-item footer-item-2'>

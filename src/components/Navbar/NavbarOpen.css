@@ -2,7 +2,7 @@
     position: fixed;
     width: 100vw;
     max-width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--secondary-color);
     z-index: 401;
     top: 0;

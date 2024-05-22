@@ -8,28 +8,28 @@ export default function Projects() {
             category: 'Web',
             techologies: ['Laravel', 'Vue','PrimeVue', 'Mapbox'],
             description: 'Descripción del proyecto 1',
-            img: './mountain.jpg'
+            img: './projects-img/streetfeed_thumbail.png'
         },
         {
             title: 'aCEP',
             category: 'Desktop & Mobile',
             techologies: ['.NET Framework', 'Kotlin'],
             description: 'Descripción del proyecto 2',
-            img: './mountain.jpg'
+            img: './projects-img/aCep_thumbnail.png'
         },
         {
             title: 'Cientifiks en Joc',
             category: 'Web',
             techologies: ['HTML', 'CSS', 'PHP', 'JavaScript', 'MySQL'],
             description: 'Descripción del proyecto 3',
-            img: './mountain.jpg'
+            img: './projects-img/cej_thubmail.png'
         },
         {
             title: 'FilmZ',
             category: 'Desktop & Mobile',
             techologies: ['.NET Framework', 'Kotlin'],
             description: 'Descripción del proyecto 3',
-            img: './mountain.jpg'
+            img: './projects-img/filmz_thumbnail.png'
         }
     ];
     return(

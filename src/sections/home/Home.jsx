@@ -4,13 +4,13 @@ import { useRef } from 'react';
 
 import CallToScroll from '../../components/CallToScroll/CallToScroll';
 
-export default function Home() {
+export default function Home({ setLoading }) {
     const homeRef = useRef(null);
 
 
     return (
         <div className='home-section d-flex flex-column align-items-start full-width-section' id='home' ref={homeRef}>
-            <video id="background-video" autoPlay loop muted poster="background-video-poster.jpg">
+            <video id="background-video" autoPlay loop muted poster="background-video-poster.jpg" onCanPlay={()=>{setLoading(false)}}>
                 <source src="background-video2.mp4" type="video/mp4" />
             </video>
             <div className='home-content'>
