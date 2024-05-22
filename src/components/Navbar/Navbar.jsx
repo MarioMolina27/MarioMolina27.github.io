@@ -13,13 +13,16 @@ export default function Navbar({ isOpen, setIsOpen }) {
         const infoSection = document.getElementById('info-section');
         const nav = document.querySelector('nav');
         const logo = document.querySelector('.logo');
+        const accecibility = document.querySelector('.accessibility-info-container');
         if(isOpen) {
             porfolio.style.overflow = 'hidden';
             nav.classList.remove('nav-close-mobile-not-home');
             logo.style.display = 'none';
+            accecibility.style.display = 'none';
 
         } else {
             porfolio.style.overflow = 'auto';
+            accecibility.style.display = 'block';
             if(infoSection !== null) {
                 const infoRect = infoSection.getBoundingClientRect();
                 if (infoRect.top > 0) {

@@ -1,5 +1,6 @@
 import './App.css'
 import Navigation from './components/Navbar/Navigation.jsx'
+import { AccessibilityInfo } from './components/accessibilityInfo/accessibilityInfo.jsx'
 import { Route, Routes } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
 
@@ -19,6 +20,7 @@ function App() {
             </Routes>
         </Suspense>
       </div>
+      <AccessibilityInfo />
     </>
   )
 }

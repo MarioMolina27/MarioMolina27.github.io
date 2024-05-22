@@ -3,6 +3,10 @@
     --secondary-color: #2F2F30;
     --accent-color: #7936FF;
     --text-color: #808089;
+
+    --accent-color-1: #7936FF;
+    --accent-color-2: #ff4d00;
+    --accent-color-3: #50ff70;
 }
 
 body{

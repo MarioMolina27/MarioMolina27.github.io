@@ -85,6 +85,7 @@
 @media (max-width: 768px) {
     .switches-container {
         width: 100%;
+        top: 80px;
     }
     .switches-container label {
         font-size: 1rem;

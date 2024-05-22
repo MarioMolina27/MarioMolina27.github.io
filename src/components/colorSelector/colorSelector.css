@@ -1,0 +1,106 @@
+.custom-color-container{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    height: 10vh;
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.custom-color-container p{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--main-color);  
+    border-radius: 20px;
+    padding: 10px 25px;
+}
+
+.custom-colors-selector-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 20px;
+    padding: 10px 25px;
+    background-color: var(--text-color);
+}
+
+.color-selector{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--text-color);
+    color: var(--main-color);
+    font-weight: 600;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.color-lila{
+    background-color: var(--accent-color-1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.color-rojo{
+    background-color: var(--accent-color-2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.color-verde{
+    background-color: var(--accent-color-3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .color-selector{
+        font-size: 1rem;
+    }
+
+    .color-lila{
+        width: 30px;
+        height: 30px;
+    }
+
+    .color-rojo{
+        width: 30px;
+        height: 30px;
+    }
+
+    .color-verde{
+        width: 30px;
+        height: 30px;
+    }
+
+    .custom-color-container p{
+        font-size: 1rem;
+    }
+
+    .custom-color-container{
+        padding: 5px 15px;
+    }
+}

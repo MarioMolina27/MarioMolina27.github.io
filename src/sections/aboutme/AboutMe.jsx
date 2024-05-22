@@ -7,37 +7,6 @@ export default function AboutMe() {
     const aboutMeRef = useRef(null);
     const [imageSrc] = useState('./persona.png'); 
 
-
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //         ([entry]) => {
-    //             if (entry.isIntersecting && entry.intersectionRatio >= 0.9) {
-    //                 setTimeout(() => {
-    //                     setImageSrc('./persona-derecha.png');
-    //                 },100)
-    //             }
-    //         },
-    //         { threshold: 0.9}
-    //     );
-
-    //     if (aboutMeRef.current) {
-    //         observer.observe(aboutMeRef.current);
-    //     }
-
-    //     return () => {
-    //         if (aboutMeRef.current) {
-    //             observer.unobserve(aboutMeRef.current);
-    //         }
-    //     };
-    // }, []);
-
-    // useEffect(() => {
-    //     console.log(imageSrc);
-    //     if(imageSrc !== './persona.png'){
-    //         document.querySelector('.img-face').classList.add('animate__animated', 'animate__fadeIn');
-    //     }
-    // },[imageSrc])
-
     return(
         <div ref={aboutMeRef} className='aboutme normal-width-section' id="aboutme" style={{minHeight:'100vh'}}>
             <div className="container-fluid aboutme-content">

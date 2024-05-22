@@ -2,13 +2,21 @@
 import './NavbarOpen.css';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ColorSelector from '../colorSelector/colorSelector';
 
 export default function NavbarOpen({ isOpen, setIsOpen }) {
-
     const [showList, setShowList] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(0);
     const location = useLocation();
     const navigate = useNavigate();
 
+    const items = [
+        { id: 'home', label: 'Home' },
+        { id: 'aboutme', label: 'Sobre mi' },
+        { id: 'projects', label: 'Proyectos' },
+        { id: 'experience', label: 'Experiencia' },
+        { id: 'skills', label: 'Habilidades' }
+    ];
 
     useEffect(() => {
         if (isOpen) {
@@ -21,6 +29,25 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (isOpen) {
+                if (event.key === 'Tab') {
+                    event.preventDefault();
+                    setSelectedItem((prev) => (prev + 1) % items.length);
+                }
+                if (event.key === 'Enter') {
+                    handleClick(items[selectedItem].id);
+                }
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isOpen, selectedItem, items]);
+
     const handleClick = (id) => {
         setIsOpen(false);
         setTimeout(() => {
@@ -29,7 +56,7 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
             } else {
                 navigate(`/`);
                 setTimeout(() => {
-                    scrollToSection(id,'instant');
+                    scrollToSection(id, 'instant');
                 }, 500);
             }
         }, 500);
@@ -38,7 +65,7 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
     function scrollToSection(id, behavior = 'smooth') {
         const porfolio = document.querySelector('.porfolio-content');
         const element = document.getElementById(id);
-    
+
         if (porfolio && element) {
             porfolio.scrollTo({
                 top: element.offsetTop - porfolio.offsetTop,
@@ -47,19 +74,23 @@ export default function NavbarOpen({ isOpen, setIsOpen }) {
         }
     }
 
+  
+
     return (
         <div className={`nav-open ${isOpen === null ? 'notShown' : (isOpen ? 'slideInFromLeft' : 'slideOutToLeft')} d-flex justify-content-center`}>
             <ul className='d-flex justify-content-center flex-column p-0'>
-                {showList && (
-                    <>
-                        <li style={{ animationDelay: '0.1s' }} onClick={() => handleClick('home')} className='item-nav-open'><a>Home</a></li>
-                        <li style={{ animationDelay: '0.2s' }} onClick={() => handleClick('aboutme')} className='item-nav-open'><a>Sobre mi</a></li>
-                        <li style={{ animationDelay: '0.3s' }} onClick={() => handleClick('projects')} className='item-nav-open'><a>Proyectos</a></li>
-                        <li style={{ animationDelay: '0.4s' }} onClick={() => handleClick('experience')} className='item-nav-open'><a>Experiencia</a></li>
-                        <li style={{ animationDelay: '0.5s' }} onClick={() => handleClick('skills')} className='item-nav-open'><a>Habilidades</a></li>
-                    </>
-                )}
+                {showList && items.map((item, index) => (
+                    <li
+                        key={item.id}
+                        style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+                        onClick={() => handleClick(item.id)}
+                        className={`item-nav-open ${selectedItem === index ? 'active' : ''}`}
+                    >
+                        <a>{item.label}</a>
+                    </li>
+                ))}
             </ul>
+            <ColorSelector />
         </div>
     );
 }
