@@ -17,7 +17,7 @@ export default function MainContent() {
     return(
         <>
             <Home setLoading={setLoading} />
-            {loading && <Loader />}
+            <Loader loading={loading} />
             <div className='info-sections' id="info-section">
                 <TextAnimation />
                 <AboutMe />

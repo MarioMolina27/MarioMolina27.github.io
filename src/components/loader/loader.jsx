@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import './loader.scss'
-export default function Loader() {
+export default function Loader({ loading }) {
     return (
-        <div className='loader-container'>
+        <div className={`loader-container ${loading ? '' : 'loading-finished'}`}>
             <div className="loader"></div>
 
             <div className="loading loading04">
