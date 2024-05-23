@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
+.icon-colors{
+    height: 50px;
+}
+
 .custom-color-container p{
     font-size: 1.5rem;
     font-weight: 600;
@@ -93,6 +97,10 @@
 
     .color-verde{
         width: 30px;
+        height: 30px;
+    }
+
+    .icon-colors{
         height: 30px;
     }
 

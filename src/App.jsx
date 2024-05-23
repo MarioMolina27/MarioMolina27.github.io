@@ -13,7 +13,7 @@ function App() {
     <>
       <Navigation />
       <div className='porfolio-content'>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div style={{height: '100vh', width: '100vw', backgroundColor: 'var(--secondary-color)', position: 'fixed', zIndex: 9999}}></div>}>
             <Routes>
               <Route path="/" element={<LazyHomePage />} />
               <Route path="/project/:name" element={<LazyProjectDetails />} />

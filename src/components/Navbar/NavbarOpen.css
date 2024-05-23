@@ -62,13 +62,13 @@
     transition: width 0.5s ease; 
 }
 
-.item-nav-open:hover::after {
-    width: 100%;
+.item-nav-open :hover {
+    color: var(--accent-color) !important; 
 }
 
 a {
     text-decoration: none !important;
-    color: var(--main-color) !important; 
+    color: var(--main-color); 
 }
 
 @keyframes fadeIn {
