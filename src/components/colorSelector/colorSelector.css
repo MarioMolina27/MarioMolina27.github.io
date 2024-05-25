@@ -8,7 +8,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--text-color);
     border-radius: 20px;
     cursor: pointer;
 }
@@ -23,7 +22,7 @@
     text-align: center;
     color: var(--main-color);  
     border-radius: 20px;
-    padding: 10px 25px;
+    padding: 8px;
 }
 
 .custom-colors-selector-container{
@@ -38,6 +37,11 @@
     border-radius: 20px;
     padding: 10px 25px;
     background-color: var(--text-color);
+    animation: slideInUp 300ms forwards;
+}
+
+.hide{
+    animation: slideOutDown 300ms forwards;
 }
 
 .color-selector{
@@ -80,6 +84,28 @@
     cursor: pointer;
 }
 
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .color-selector{
         font-size: 1rem;
@@ -112,3 +138,4 @@
         padding: 5px 15px;
     }
 }
+

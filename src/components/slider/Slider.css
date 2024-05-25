@@ -7,6 +7,7 @@
     width: 100%;
     border-radius: 10px;
     object-fit: cover;
+
 }
 
 .slick-dots{
@@ -15,5 +16,6 @@
 
 .project-screenshot-container{
     padding-right: 10px;
+    height: 30vh;
 }
 

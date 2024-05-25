@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import './colorSelector.css'
+
 
 export default function ColorSelector() {
     const [showColor, setShowColor] = useState(false)
+
+    const colorSelector = useRef(null)
 
     const handleShowColor = () => {
         setShowColor(!showColor)
@@ -14,19 +17,28 @@ export default function ColorSelector() {
                 return () => {
                     const accentColor1 = getComputedStyle(document.documentElement).getPropertyValue('--accent-color-1');
                     document.documentElement.style.setProperty('--accent-color', accentColor1);
-                    setShowColor(false)
+                    colorSelector.current.className = 'custom-colors-selector-container hide';
+                    setTimeout(() => {
+                        setShowColor(false)
+                    }, 300)
                 }
             case 'rojo':
                 return () => {
                     const accentColor2 = getComputedStyle(document.documentElement).getPropertyValue('--accent-color-2');
-                    document.documentElement.style.setProperty('--accent-color', accentColor2);                    
-                    setShowColor(false)
+                    document.documentElement.style.setProperty('--accent-color', accentColor2);
+                    colorSelector.current.className = 'custom-colors-selector-container hide';
+                    setTimeout(() => {
+                        setShowColor(false)
+                    }, 300)                    
                 }
             case 'verde':
                 return () => {
                     const accentColor3 = getComputedStyle(document.documentElement).getPropertyValue('--accent-color-3');
-                    document.documentElement.style.setProperty('--accent-color', accentColor3);                    
-                    setShowColor(false)
+                    document.documentElement.style.setProperty('--accent-color', accentColor3);
+                    colorSelector.current.className = 'custom-colors-selector-container hide';
+                    setTimeout(() => {
+                        setShowColor(false)
+                    }, 300)                    
                 }
         }
     }
@@ -41,7 +53,7 @@ export default function ColorSelector() {
                     <p className='mb-0 ms-2'>Color Principal</p>
                 </div>
             ) : (
-                <div className='custom-colors-selector-container'>
+                <div className='custom-colors-selector-container' ref={colorSelector}>
                     <div className='color-selector' onClick={handleChangeAccentColor('lila')}>
                         <div className='color-lila'></div>
                         <p className='mb-0 me-5'>Lila</p>
