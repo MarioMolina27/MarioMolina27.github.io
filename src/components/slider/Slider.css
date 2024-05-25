@@ -19,3 +19,9 @@
     height: 30vh;
 }
 
+@media (max-width: 768px){
+    .project-screenshot-container{
+        height: 15vh;
+    }
+}
+
