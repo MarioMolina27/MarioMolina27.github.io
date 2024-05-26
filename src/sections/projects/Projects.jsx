@@ -24,13 +24,13 @@ export default function Projects() {
             description: 'Descripción del proyecto 3',
             img: './projects-img/cej_thubmail.png'
         },
-        {
-            title: 'FilmZ',
-            category: 'Desktop & Mobile',
-            techologies: ['.NET Framework', 'Kotlin'],
-            description: 'Descripción del proyecto 3',
-            img: './projects-img/filmz_thumbnail.png'
-        }
+        // {
+        //     title: 'FilmZ',
+        //     category: 'Desktop & Mobile',
+        //     techologies: ['.NET Framework', 'Kotlin'],
+        //     description: 'Descripción del proyecto 3',
+        //     img: './projects-img/filmz_thumbnail.png'
+        // }
     ];
     return(
         <div className="projects normal-width-section" id="projects">

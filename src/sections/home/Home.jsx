@@ -11,7 +11,7 @@ export default function Home({ setLoading }) {
     return (
         <div className='home-section d-flex flex-column align-items-start full-width-section' id='home' ref={homeRef}>
             <video id="background-video" autoPlay loop muted poster="background-video-poster.jpg" onCanPlay={()=>{setLoading(false)}}>
-                <source src="background-video2.mp4" type="video/mp4" />
+                <source src="background-video.mp4" type="video/mp4" />
             </video>
             <div className='home-content'>
                 <div className='info-home'>

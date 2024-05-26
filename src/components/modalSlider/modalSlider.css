@@ -15,8 +15,7 @@
   position: relative;
   background: white;
   border-radius: 8px;
-  max-width: 90%;
-  max-height: 90%;
+  width: 70vw;
   overflow: hidden;
 }
 
@@ -38,8 +37,7 @@
 }
 
 .modal-image {
-  width: 100%;
-  height: auto;
+  width: 70vw;
   object-fit: cover;
 }
 

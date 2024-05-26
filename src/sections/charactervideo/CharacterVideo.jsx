@@ -88,7 +88,7 @@ export default function CharacterVideo() {
     return (
         <div className="charactervideo-section normal-width-section" id="charactervideo">
             <div className='video-container'>
-                <video ref={videoRef} className="charactervideo" src="a.mp4" muted></video>
+                <video ref={videoRef} className="charactervideo" src="interactive-video.mp4" muted></video>
 
                 <div className='video-interactive-section'>
                     <span id="bubble">

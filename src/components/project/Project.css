@@ -127,4 +127,8 @@
     .project-category{
         font-size: 16px;
     }
+
+    .mask-image img{
+        object-position: right;
+    }
 }
