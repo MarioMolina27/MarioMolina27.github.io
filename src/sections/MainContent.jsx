@@ -6,6 +6,7 @@ import CharacterVideo from './charactervideo/CharacterVideo.jsx'
 import EyesAnimation from './eyesanimation/EyesAnimation.jsx'
 import Experience from './experience/Experience.jsx'
 import Skills from './skills/Skills.jsx'
+import Gallery from './gallery/gallery.jsx'
 import Footer from './footer/Footer.jsx'
 import Loader from '../components/loader/loader.jsx'
 
@@ -25,6 +26,7 @@ export default function MainContent() {
                 <Projects />
                 <EyesAnimation />
                 <Experience />
+                <Gallery />
                 <Skills />
                 <Footer />
             </div>
