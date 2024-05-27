@@ -5,7 +5,7 @@ export default function AboutMe() {
 
     const imageMeRef = useRef(null);
     const aboutMeRef = useRef(null);
-    const [imageSrc] = useState('./persona.png'); 
+    const [imageSrc] = useState('./me.png'); 
 
     return(
         <div ref={aboutMeRef} className='aboutme normal-width-section' id="aboutme" style={{minHeight:'100vh'}}>
